@@ -1,0 +1,134 @@
+.header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s ease;
+
+  @include container(16px);
+
+  @include scale(
+    (
+      height: (
+        72px,
+        72px,
+        auto,
+      ),
+      padding-top: (
+        20px,
+        20px,
+        40px,
+      ),
+      padding-bottom: (
+        20px,
+        20px,
+        40px,
+      ),
+    )
+  );
+
+  svg {
+    @include scale(
+      (
+        height: (
+          32px,
+          32px,
+          inherit,
+        ),
+        width: (
+          30px,
+          30px,
+          inherit,
+        ),
+      )
+    );
+  }
+
+  &_logo {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include scale(
+      (
+        height: (
+          28px,
+          28px,
+          70px,
+        ),
+        width: (
+          32px,
+          32px,
+          80px,
+        ),
+      )
+    );
+  }
+
+  &_menu {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include scale(
+      (
+        gap: (
+          20px,
+          20px,
+          64px,
+        ),
+      )
+    );
+
+    &_item {
+      $item: &;
+
+      &_icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include scale(
+          (
+            top: 3px,
+          )
+        );
+
+        svg {
+          @include scale(
+            (
+              width: 36px,
+              height: 36px,
+            )
+          );
+        }
+      }
+    }
+  }
+
+  &Opened {
+    background: var(--color-bg-main);
+  }
+
+  &.noScrolling,
+  &.scrollingUp {
+    transform: translateY(0%);
+  }
+
+  &.scrollingDown,
+  &.scrollingUp {
+    backdrop-filter: blur(100px);
+    background: rgba($bg-main, 0.88);
+  }
+
+  &.scrollingDown {
+    transform: translateY(-100%);
+  }
+}

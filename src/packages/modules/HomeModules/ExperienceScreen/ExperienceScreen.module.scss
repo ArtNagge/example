@@ -1,0 +1,35 @@
+.base {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  @include container(16px, 64px, 64px);
+
+  &_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-secondary);
+
+    @include scale(
+      (
+        padding-top: (
+          24px,
+          70px,
+          175px,
+        ),
+        padding-bottom: (
+          24px,
+          70px,
+          205px,
+        ),
+      )
+    );
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

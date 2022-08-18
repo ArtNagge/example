@@ -1,0 +1,17 @@
+@import 'colors';
+
+//noinspection Stylelint
+:export {
+  bg-main: $bg-main;
+  bg-primary: $bg-primary;
+  bg-quaternary: $bg-quaternary;
+  bg-red: $bg-red;
+  bg-secondary: $bg-secondary;
+  bg-tertiary: $bg-tertiary;
+  label-main: $label-main;
+  label-primary: $label-primary;
+  label-quaternary: $label-quaternary;
+  label-red: $label-red;
+  label-secondary: $label-secondary;
+  label-tertiary: $label-tertiary;
+}

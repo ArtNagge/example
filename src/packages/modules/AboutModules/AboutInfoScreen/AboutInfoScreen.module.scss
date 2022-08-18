@@ -1,0 +1,158 @@
+.about_info {
+  @include container(16px, 64px, 64px);
+
+  &_screen {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @include container(16px, 64px, 156px);
+
+    @include scale(
+      (
+        padding-top: (
+          45px,
+          45px,
+          140px,
+        ),
+      )
+    );
+
+    &::before {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      background: url('/static/images/noise.png') no-repeat top center #eeeeee;
+      background-blend-mode: overlay;
+      background-size: cover;
+      content: '';
+
+      @include scale(
+        (
+          height: (
+            760px,
+            400px,
+            820px,
+          ),
+        )
+      );
+    }
+
+    &_main {
+      position: relative;
+      z-index: 1;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+
+      @include scale(
+        (
+          flex-wrap: (
+            wrap,
+            wrap,
+            no-wrap,
+          ),
+          column-gap: (
+            35px,
+            35px,
+            140px,
+          ),
+          row-gap: (
+            40px,
+            40px,
+            140px,
+          ),
+          justify-content: (
+            space-between,
+            space-between,
+            flex-start,
+          ),
+          padding: (
+            0 28px,
+            0 28px,
+            0,
+          ),
+          display: (
+            grid,
+            grid,
+            flex,
+          ),
+        )
+      );
+
+      &_item {
+
+        & &_label {
+          @include phone() {
+            font-size: 40px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    &_pictures {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      @include scale(
+        (
+          margin-top: (
+            64px,
+            64px,
+            130px,
+          ),
+          flex-direction: (
+            column,
+            row,
+            row,
+          ),
+        )
+      );
+
+      &_item {
+        position: relative;
+
+        @include scale(
+          (
+            width: (
+              100%,
+              100%,
+              690px,
+            ),
+            height: (
+              260px,
+              220px,
+              520px,
+            ),
+          )
+        );
+
+        &:nth-child(2) {
+          @include scale(
+            (
+              margin-top: (
+                16px,
+                0,
+                120px,
+              ),
+              margin-left: (
+                0,
+                10px,
+                0,
+              ),
+            )
+          );
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+
+  @include scale(
+    (
+      gap: 8px,
+      width: (
+        calc(100% - phoneVw(32px)),
+        calc(100% - tabletVw(64px)),
+        calc(100% - desktopVw(128px)),
+      ),
+    )
+  );
+
+  &_full {
+    width: 100%;
+  }
+
+  &_reverse {
+    flex-direction: row-reverse;
+  }
+
+  &_line {
+    width: 100%;
+    background: var(--color-label-secondary);
+
+    @include scale(
+      (
+        height: 2px,
+      )
+    );
+  }
+
+  &_dot {
+    background: var(--color-label-secondary);
+
+    @include scale(
+      (
+        height: 2px,
+      )
+    );
+
+    &_2 {
+      @include scale(
+        (
+          width: 32px,
+        )
+      );
+    }
+
+    &_4 {
+      @include scale(
+        (
+          width: 12px,
+        )
+      );
+    }
+  }
+}

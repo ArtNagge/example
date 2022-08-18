@@ -1,0 +1,97 @@
+.services_provide_screen {
+  @include container(16px, 64px, 220px);
+
+  @include scale(
+    (
+      padding-top: (
+        56px,
+        56px,
+        120px,
+      ),
+      padding-bottom: (
+        56px,
+        56px,
+        140px,
+      ),
+    )
+  );
+
+  &_services {
+    display: grid;
+    width: 100%;
+
+    @include scale(
+      (
+        gap: (
+          15px,
+          15px,
+          20px,
+        ),
+        margin-top: (
+          20px,
+          20px,
+          104px,
+        ),
+        grid-template-columns: (
+          1fr 1fr,
+          1fr 1fr,
+          1fr 1fr 1fr,
+        ),
+      )
+    );
+
+    &_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #080808;
+
+      @include scale(
+        (
+          padding: (
+            24px 16px 16px,
+            24px 16px 16px,
+            98px 52px 52px,
+          ),
+        )
+      );
+
+      &_picture {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include scale(
+          (
+            width: (
+              100px,
+              100px,
+              290px,
+            ),
+            height: (
+              100px,
+              100px,
+              290px,
+            ),
+          )
+        );
+      }
+
+      &_info {
+        width: 100%;
+
+        @include scale(
+          (
+            margin-top: (
+              16px,
+              16px,
+              126px,
+            ),
+          )
+        );
+      }
+    }
+  }
+}

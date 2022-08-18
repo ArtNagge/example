@@ -1,0 +1,49 @@
+.typography {
+  margin: 0;
+
+  @each $property, $value in $colorsList {
+    &.#{$property} {
+      color: var(--color-#{$property});
+    }
+  }
+
+  &.head1Large {
+    @include title1Large;
+  }
+
+  &.head1 {
+    @include title1;
+  }
+
+  &.head2 {
+    @include title2;
+  }
+
+  &.head3 {
+    @include title3;
+  }
+
+  &.subtitle1 {
+    @include subtitle1;
+  }
+
+  &.subtitle2 {
+    @include subtitle2;
+  }
+
+  &.subtitle3 {
+    @include subtitle3;
+  }
+
+  &.text1 {
+    @include text1;
+  }
+
+  &.text2 {
+    @include text2;
+  }
+
+  &.link {
+    text-decoration: none;
+  }
+}

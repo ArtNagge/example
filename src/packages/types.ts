@@ -1,0 +1,13 @@
+export type TColor =
+  | 'bg-main'
+  | 'label-main'
+  | 'bg-secondary'
+  | 'label-primary'
+  | 'bg-primary'
+  | 'label-secondary'
+  | 'bg-tertiary'
+  | 'label-tertiary'
+  | 'bg-quaternary'
+  | 'label-quaternary'
+  | 'label-red'
+  | 'bg-red'

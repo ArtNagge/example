@@ -1,0 +1,21 @@
+$playFont: 'Play';
+$heptaFont: 'Hepta Slab';
+$goshaFont: 'Gosha Sans';
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gosha Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/GoshaSans-Bold.woff2') format('woff2'),
+    url('../fonts/GoshaSans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gosha Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/GoshaSans-Regular.woff2') format('woff2'),
+    url('../fonts/GoshaSans-Regular.woff') format('woff');
+}

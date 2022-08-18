@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  frontend:
+    container_name: front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      APP_LOCALE: ru-RU
+      PUBLIC_URL: https://noname/api/
+    restart: on-failure
+    ports:
+      - 3000:3000

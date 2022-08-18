@@ -1,0 +1,89 @@
+.create_shot {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  &_form {
+    width: 100%;
+  }
+
+  &_head {
+    @include scale(
+      (
+        margin-bottom: (
+          72px,
+          72px,
+          100px,
+        ),
+      )
+    );
+  }
+
+  &_tags {
+
+    &_button {
+      @include scale(
+        (
+          margin-right: 20px,
+        )
+      );
+    }
+  }
+
+  &_type {
+
+    &_radio {
+      display: flex;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--color-label-secondary);
+
+      @include scale(
+        (
+          padding: 6px,
+        )
+      );
+
+      &_button {
+        background-color: transparent;
+        transition: 0.5s ease;
+
+        @include scale(
+          (
+            padding: 4px 10px 8px,
+          )
+        );
+
+        &_active {
+          background-color: var(--color-label-secondary);
+        }
+      }
+    }
+  }
+
+  &_uploader {
+    @include scale(
+      (
+        margin-bottom: (
+          32px,
+          32px,
+          120px,
+        ),
+      )
+    );
+  }
+
+  &_buttons {
+    display: flex;
+    align-items: center;
+
+    @include scale(
+      (
+        gap: 40px,
+      )
+    );
+  }
+}

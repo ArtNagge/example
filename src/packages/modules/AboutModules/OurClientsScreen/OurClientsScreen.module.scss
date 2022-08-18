@@ -1,0 +1,184 @@
+.our_clients_screen {
+  @include container(16px, 64px, 220px);
+
+  &_wrapper {
+    @include scale(
+      (
+        padding-top: (
+          64px,
+          64px,
+          160px,
+        ),
+        padding-bottom: (
+          64px,
+          64px,
+          160px,
+        ),
+      )
+    );
+  }
+
+  &_title {
+    position: absolute;
+    top: 0;
+  }
+
+  &_author {
+    @include scale(
+      (
+        margin-top: (
+          40px,
+          40px,
+          134px,
+        ),
+      )
+    );
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  &_arrows {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    display: flex;
+    align-items: center;
+
+    @include scale(
+      (
+        bottom: (
+          3px,
+          3px,
+          9px,
+        ),
+      )
+    );
+
+    &_leftArrow {
+      display: flex;
+      transform: rotate(180deg);
+
+      @include scale(
+        (
+          margin-right: (
+            20px,
+            20px,
+            56px,
+          ),
+        )
+      );
+    }
+
+    &_rightArrow {
+      display: flex;
+    }
+
+    svg {
+      @include scale(
+        (
+          width: (
+            32px,
+            32px,
+            50px,
+          ),
+          height: (
+            14px,
+            14px,
+            18px,
+          ),
+        )
+      );
+    }
+  }
+
+  &_info {
+    @include scale(
+      (
+        height: (
+          160px,
+          160px,
+          430px,
+        ),
+      )
+    );
+  }
+
+  :global(.swiper) {
+    @include scale(
+      (
+        padding-top: (
+          44px,
+          44px,
+          156px,
+        ),
+      )
+    );
+  }
+
+  :global(.swiper-pagination) {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    counter-reset: section;
+
+    @include scale(
+      (
+        top: (
+          2px,
+          2px,
+          8px,
+        ),
+      )
+    );
+  }
+
+  :global(.swiper-pagination-bullet) {
+    display: flex;
+    align-items: center;
+    color: var(--color-label-quaternary);
+
+    @include title3;
+
+    @include scale(
+      (
+        height: (
+          20px,
+          20px,
+          36px,
+        ),
+      )
+    );
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    color: var(--color-label-secondary);
+  }
+
+  :global(.swiper-pagination-bullet)::before {
+    content: counter(section);
+    counter-increment: section;
+  }
+
+  :global(.swiper-pagination-bullet)::after {
+    color: var(--color-label-quaternary);
+    content: '-';
+
+    @include scale(
+      (
+        margin: (
+          0 8px,
+          0 8px,
+          0 20px,
+        ),
+      )
+    );
+  }
+
+  :global(.swiper-pagination-bullet):last-child:after {
+    display: none;
+  }
+}

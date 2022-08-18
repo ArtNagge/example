@@ -1,0 +1,180 @@
+@mixin title1Large {
+  font-family: $goshaFont;
+  font-weight: 700;
+
+  @include scale(
+    (
+      font-size: (
+        32px,
+        32px,
+        120px,
+      ),
+      line-height: (
+        40px,
+        40px,
+        140px,
+      ),
+    )
+  );
+}
+
+@mixin title1 {
+  font-family: $goshaFont;
+  font-weight: 400;
+
+  @include scale(
+    (
+      font-size: (
+        32px,
+        32px,
+        72px,
+      ),
+      line-height: (
+        40px,
+        40px,
+        86px,
+      ),
+    )
+  );
+}
+
+@mixin title2 {
+  font-family: $goshaFont;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+
+  @include scale(
+    (
+      font-size: (
+        24px,
+        24px,
+        48px,
+      ),
+      line-height: (
+        32px,
+        32px,
+        56px,
+      ),
+    )
+  );
+}
+
+@mixin title3 {
+  font-family: $goshaFont;
+  font-weight: 400;
+
+  @include scale(
+    (
+      font-size: (
+        14px,
+        14px,
+        32px,
+      ),
+      line-height: (
+        20px,
+        20px,
+        36px,
+      ),
+    )
+  );
+}
+
+@mixin subtitle1 {
+  font-family: $goshaFont;
+  font-weight: 400;
+
+  @include scale(
+    (
+      font-size: (
+        14px,
+        14px,
+        32px,
+      ),
+      line-height: (
+        24px,
+        24px,
+        40px,
+      ),
+    )
+  );
+}
+
+@mixin subtitle2 {
+  font-family: $playFont;
+  font-weight: 400;
+
+  @include scale(
+    (
+      font-size: (
+        20px,
+        20px,
+        32px,
+      ),
+      line-height: (
+        24px,
+        24px,
+        40px,
+      ),
+    )
+  );
+}
+
+@mixin subtitle3 {
+  font-family: $goshaFont;
+  font-weight: 400;
+
+  @include scale(
+    (
+      font-size: (
+        14px,
+        14px,
+        24px,
+      ),
+      line-height: (
+        20px,
+        20px,
+        32px,
+      ),
+    )
+  );
+}
+
+@mixin text1 {
+  font-family: $goshaFont;
+  font-weight: 400;
+
+  @include scale(
+    (
+      font-size: (
+        12px,
+        12px,
+        20px,
+      ),
+      line-height: (
+        14px,
+        14px,
+        24px,
+      ),
+    )
+  );
+}
+
+@mixin text2 {
+  font-family: $goshaFont;
+  font-weight: 400;
+
+  @include scale(
+    (
+      font-size: (
+        16px,
+        16px,
+        32px,
+      ),
+      line-height: (
+        22px,
+        22px,
+        36px,
+      ),
+    )
+  );
+}

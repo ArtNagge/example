@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+
+  @include scale(
+    (
+      width: 100%,
+      margin-bottom: (
+        32px,
+        32px,
+        80px,
+      ),
+    )
+  );
+
+  .label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &Text {
+      @include scale(
+        (
+          margin-right: 68px !important,
+        )
+      );
+    }
+  }
+}

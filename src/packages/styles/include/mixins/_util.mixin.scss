@@ -1,0 +1,161 @@
+/*
+Миксин для определения размеров содержимого
+Пример использования:
+div {
+  @include size(100%);
+}
+*/
+@mixin size($size, $type: null) {
+  @if ($type == max) {
+    max-width: $size;
+    max-height: $size;
+  }
+
+  @else if ($type == min) {
+    min-width: $size;
+    min-height: $size;
+  }
+
+  @else {
+    width: $size;
+    height: $size;
+  }
+}
+
+/*
+Миксин для обрезания длинной строки троеточием.
+Пример использования:
+p {
+  @include ellipsis(100%);
+}
+*/
+@mixin ellipsis($truncation-boundary) {
+  overflow: hidden;
+  max-width: $truncation-boundary;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*
+Миксин для создания контейнера
+Пример использования:
+div {
+  @include container(64px);
+}
+*/
+@mixin container(
+  $mobilePaddings: 64px,
+  $tabletPaddings: 64px,
+  $paddings: 64px
+) {
+  width: 100%;
+
+  @include scale(
+    (
+      padding: (
+        0 $mobilePaddings,
+        0 $tabletPaddings,
+        0 $paddings,
+      ),
+    )
+  );
+}
+
+/*
+Миксин для быстрого выравнивания блока по центру
+Пример использования:
+div {
+  @include centerBlock;
+}
+*/
+@mixin centerBlock($direction: null) {
+  position: absolute;
+
+  @if ($direction == vertical) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @else if ($direction == horizontal) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @else {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/*
+Миксин для быстрого выравнивания картинки по центру
+Пример использования:
+div {
+  @include centerImage;
+}
+*/
+@mixin centerImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+/*
+Миксин для изображений.
+Нужен, чтобы картинка заполняла другой блок подобно background-size: cover
+Пример использования:
+div {
+  @include fillImg;
+}
+*/
+@mixin fillImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  min-width: 100%;
+  min-height: 100%;
+  margin: auto;
+  object-fit: cover;
+}
+
+@mixin hideScrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}
+
+@mixin resetList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin resetButton {
+  overflow: visible;
+  width: auto;
+  padding: 0;
+  border: unset;
+  margin: 0;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  line-height: normal;
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}

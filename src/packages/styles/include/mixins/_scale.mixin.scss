@@ -1,0 +1,84 @@
+@use 'sass:list';
+
+@import '../../variables/breakpoints';
+
+@mixin phone() {
+  @media (min-width: 0) and (max-width: #{$breakpoint-md - 1}px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (min-width: #{$breakpoint-md}px) and (max-width: #{$breakpoint-xl}px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: #{$breakpoint-xl}px) {
+    @content;
+  }
+}
+
+@mixin largeDesktop() {
+  @media (min-width: #{$breakpoint-2xxl}px) {
+    @content;
+  }
+}
+
+/**
+  Функция для скейлинга значений
+  Сайт везде использует vw вместо пикселей
+  Если передаем массивом - переводит в vw для различных разрешений
+  Переводит в vw ТОЛЬКО ПИКСЕЛИ
+  Пример:
+    width: [24px, 32px, 48px]
+ */
+@mixin scale($params) {
+  @include phone() {
+    @each $property, $value in $params {
+      $valueArr: list.join([], $value);
+
+      #{$property}: if(
+        type-of($valueArr) and length($valueArr) > 0,
+        smartScale(list.nth($valueArr, 1), 'phone'),
+        smartScale($valueArr, 'phone')
+      );
+    }
+  }
+
+  @include tablet() {
+    @each $property, $value in $params {
+      $valueArr: list.join([], $value);
+      #{$property}: if(
+        type-of($valueArr) and length($valueArr) > 1,
+        smartScale(list.nth($valueArr, 2), 'tablet'),
+        smartScale($valueArr, 'tablet')
+      );
+    }
+  }
+
+  @include desktop() {
+    @each $property, $value in $params {
+      $valueArr: list.join([], $value);
+
+      #{$property}: if(
+        type-of($valueArr) and length($valueArr) > 2,
+        smartScale(list.nth($valueArr, 3), 'desktop'),
+        smartScale($valueArr, 'desktop')
+      );
+    }
+  }
+
+  @include largeDesktop() {
+    @each $property, $value in $params {
+      $valueArr: list.join([], $value);
+
+      #{$property}: if(
+        type-of($valueArr) and length($valueArr) > 2,
+        smartScale(list.nth($valueArr, 3), 'largeDesktop'),
+        smartScale($valueArr, 'largeDesktop')
+      );
+    }
+  }
+}

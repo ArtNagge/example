@@ -1,0 +1,45 @@
+.uploader {
+  display: flex;
+  width: 50%;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-bg-quaternary);
+  text-align: center;
+  transition: 0.5s ease;
+
+  @include scale(
+    (
+      height: (
+        155px,
+        155px,
+        370px,
+      ),
+    )
+  );
+
+  input[type='file'] {
+    display: none;
+  }
+
+  &_container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_heading {
+    text-decoration-line: underline;
+
+    @include scale(
+      (
+        margin-bottom: 24px,
+      )
+    );
+  }
+}

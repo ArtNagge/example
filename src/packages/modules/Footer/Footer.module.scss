@@ -1,0 +1,255 @@
+.base {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  @include container(16px, 64px, 220px);
+
+  @include scale(
+    (
+      padding-bottom: (
+        50px,
+        50px,
+        100px,
+      ),
+    )
+  );
+
+  &_top {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include scale(
+      (
+        flex-direction: (
+          column,
+          row,
+          row,
+        ),
+        margin-top: (
+          50px,
+          50px,
+          100px,
+        ),
+      )
+    );
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &_mail {
+        @include scale(
+          (
+            margin-top: (
+              12px,
+              22px,
+              44px,
+            ),
+          )
+        );
+      }
+
+      &_description {
+        font-family: $playFont !important;
+      }
+    }
+
+    &_menu {
+      display: flex;
+      align-items: flex-start;
+
+      @include scale(
+        (
+          gap: (
+            0,
+            50px,
+            215px,
+          ),
+          margin-top: (
+            36px,
+            0,
+            0,
+          ),
+        )
+      );
+
+      a,
+      span {
+        transition: 0.5s ease;
+
+        &:hover {
+          color: var(--color-label-secondary);
+        }
+      }
+
+      &_left,
+      &_right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+
+        @include scale(
+          (
+            gap: (
+              32px,
+              12px,
+              12px,
+            ),
+            flex-direction: (
+              row,
+              column,
+              column,
+            ),
+          )
+        );
+      }
+
+      &_left {
+        @include scale(
+          (
+            display: (
+              none,
+              flex,
+              flex,
+            ),
+          )
+        );
+      }
+    }
+  }
+
+  &_bottom {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    @include scale(
+      (
+        margin-top: (
+          40px,
+          75px,
+          150px,
+        ),
+      )
+    );
+
+    &_logo {
+      opacity: 0.24;
+
+      @include scale(
+        (
+          display: (
+            none,
+            block,
+            block,
+          ),
+        )
+      );
+
+      svg {
+        @include scale(
+          (
+            height: (
+              28px,
+              28px,
+              70px,
+            ),
+            width: (
+              32px,
+              32px,
+              80px,
+            ),
+          )
+        );
+      }
+    }
+
+    &_info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include scale(
+        (
+          gap: (
+            0,
+            70px,
+            90px,
+          ),
+          width: (
+            100%,
+            auto,
+            auto,
+          ),
+        )
+      );
+
+      &_copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include scale(
+          (
+            gap: 12px,
+          )
+        );
+      }
+
+      &_arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px var(--color-bg-tertiary);
+        border-radius: 50%;
+        color: var(--color-bg-tertiary);
+        transition: 0.5s ease;
+
+        @include scale(
+          (
+            width: (
+              40px,
+              40px,
+              80px,
+            ),
+            height: (
+              40px,
+              40px,
+              80px,
+            ),
+          )
+        );
+
+        svg {
+          @include scale(
+            (
+              width: (
+                14px,
+                14px,
+                28px,
+              ),
+              height: (
+                16px,
+                16px,
+                32px,
+              ),
+            )
+          );
+        }
+
+        &:hover {
+          border: solid 1px var(--color-bg-secondary);
+          color: var(--color-bg-secondary);
+        }
+      }
+    }
+  }
+}

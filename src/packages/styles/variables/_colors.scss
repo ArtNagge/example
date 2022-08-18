@@ -1,0 +1,27 @@
+$bg-main: #000000;
+$label-main: #000000;
+$bg-secondary: #ffffff;
+$label-secondary: #ffffff;
+$bg-primary: #32a674;
+$label-primary: #32a674;
+$bg-tertiary: rgba(255, 255, 255, 0.48);
+$label-tertiary: rgba(255, 255, 255, 0.48);
+$bg-quaternary: rgba(255, 255, 255, 0.24);
+$label-quaternary: rgba(255, 255, 255, 0.24);
+$label-red: #f74343;
+$bg-red: #f74343;
+
+$colorsList: (
+  'bg-main': $bg-main,
+  'label-main': $label-main,
+  'bg-primary': $bg-primary,
+  'label-primary': $label-primary,
+  'bg-secondary': $bg-secondary,
+  'label-secondary': $label-secondary,
+  'bg-tertiary': $bg-tertiary,
+  'label-tertiary': $label-tertiary,
+  'bg-quaternary': $bg-quaternary,
+  'label-quaternary': $label-quaternary,
+  'label-red': $label-red,
+  'bg-red': $bg-red,
+);

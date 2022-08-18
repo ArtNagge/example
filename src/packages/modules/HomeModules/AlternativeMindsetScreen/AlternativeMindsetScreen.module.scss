@@ -1,0 +1,297 @@
+.base {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  @include container(16px, 64px, 220px);
+
+  &_container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    @include scale(
+      (
+        padding-bottom: (
+          50px,
+          50px,
+          140px,
+        ),
+        padding-top: (
+          30px,
+          60px,
+          60px,
+        ),
+      )
+    );
+  }
+
+  &_header {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    @include scale(
+      (
+        bottom: (
+          -20px,
+          -20px,
+          -60px,
+        ),
+      )
+    );
+
+    &_title {
+      text-transform: uppercase;
+    }
+  }
+
+  &_ourselves {
+    display: flex;
+
+    @include scale(
+      (
+        align-items: (
+          flex-start,
+          flex-end,
+          flex-end,
+        ),
+        flex-direction: (
+          column,
+          row,
+          row,
+        ),
+      )
+    );
+
+    &_title {
+      text-transform: uppercase;
+
+      @include scale(
+        (
+          align-self: (
+            end,
+            unset,
+            unset,
+          ),
+          max-width: (
+            200px,
+            325px,
+            325px,
+          ),
+          margin-left: (
+            0,
+            80px,
+            80px,
+          ),
+          margin-bottom: (
+            0,
+            120px,
+            120px,
+          ),
+          margin-top: (
+            32px,
+            0,
+            0,
+          ),
+        )
+      );
+    }
+
+    &_img {
+      @include scale(
+        (
+          max-width: (
+            246px,
+            100%,
+            100%,
+          ),
+          max-height: (
+            188px,
+            100%,
+            100%,
+          ),
+        )
+      );
+
+      &_desc {
+        @include scale(
+          (
+            max-width: (
+              65%,
+              100%,
+              100%,
+            ),
+          )
+        );
+      }
+    }
+  }
+
+  &_problems {
+    display: flex;
+    justify-content: space-between;
+
+    @include scale(
+      (
+        align-items: (
+          flex-end,
+          center,
+          center,
+        ),
+        flex-direction: (
+          column-reverse,
+          row,
+          row,
+        ),
+        margin-top: (
+          32px,
+          32px,
+          180px,
+        ),
+      )
+    );
+
+    &_title {
+      text-transform: uppercase;
+
+      @include scale(
+        (
+          max-width: (
+            100%,
+            372px,
+            372px,
+          ),
+          margin-left: (
+            0,
+            0,
+            160px,
+          ),
+          margin-right: (
+            0,
+            50px,
+            0,
+          ),
+          margin-bottom: (
+            0,
+            50px,
+            200px,
+          ),
+          margin-top: (
+            32px,
+            0,
+            0,
+          ),
+        )
+      );
+    }
+
+    &_img {
+      @include scale(
+        (
+          max-width: (
+            246px,
+            100%,
+            100%,
+          ),
+          max-height: (
+            264px,
+            100%,
+            100%,
+          ),
+        )
+      );
+    }
+  }
+
+  &_ourselves,
+  &_problems {
+
+    &_title {
+      font-weight: 700 !important;
+    }
+
+    &_img {
+      position: relative;
+
+      &_desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-bg-main);
+        font-weight: 700 !important;
+        text-transform: uppercase;
+
+        @include scale(
+          (
+            padding: (
+              10px,
+              20px,
+              20px,
+            ),
+          )
+        );
+      }
+    }
+  }
+
+  &_footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include scale(
+      (
+        justify-content: (
+          flex-end,
+          flex-end,
+          flex-start,
+        ),
+        top: (
+          0,
+          0,
+          -60px,
+        ),
+        margin-top: (
+          32px,
+          32px,
+          0,
+        ),
+      )
+    );
+
+    &_about {
+      font-family: $playFont !important;
+      transition: 0.5s ease;
+
+      svg {
+        @include scale(
+          (
+            width: (
+              20px,
+              20px,
+              24px,
+            ),
+            height: (
+              20px,
+              20px,
+              24px,
+            ),
+            margin-left: (
+              8px,
+              8px,
+              16px,
+            ),
+          )
+        );
+      }
+
+      &:hover {
+        color: var(--color-label-secondary);
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import '../packages/normalize';
+
+@import '../variables/colors';
+
+@import '../variables/breakpoints';
+
+@import '../variables/fonts';
+
+@import 'mixins';
+
+:root {
+  --color-bg-main: #{$bg-main};
+  --color-label-main: #{$label-main};
+  --color-bg-secondary: #{$bg-secondary};
+  --color-label-secondary: #{$label-secondary};
+  --color-bg-primary: #{$bg-primary};
+  --color-label-primary: #{$label-primary};
+  --color-bg-tertiary: #{$bg-tertiary};
+  --color-label-tertiary: #{$label-tertiary};
+  --color-bg-quaternary: #{$bg-quaternary};
+  --color-label-quaternary: #{$label-quaternary};
+  --color-label-red: #{$label-red};
+  --color-bg-red: #{$bg-red};
+
+  --breakpoint-xs: #{$breakpoint-xs};
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-lg: #{$breakpoint-lg};
+  --breakpoint-xl: #{$breakpoint-xl};
+  --breakpoint-xxl: #{$breakpoint-xxl};
+}
+
+* {
+  box-sizing: border-box;
+  border: 0;
+  cursor: none !important;
+  outline: 0;
+  text-decoration: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+
+  background-color: var(--color-bg-main);
+
+  &:hover {
+
+    .cursor {
+      opacity: 1;
+    }
+  }
+}
+
+.Toastify__toast-container {
+  width: auto !important;
+
+  &--top-right {
+    top: 160px !important;
+    right: 0 !important;
+
+    @include phone() {
+      top: auto !important;
+      bottom: 0px !important;
+    }
+
+    @include tablet() {
+      top: auto !important;
+      bottom: 0px !important;
+    }
+  }
+}
+
+input {
+  border-radius: 0;
+}
+
+input[type='search'] {
+  -webkit-appearance: none;
+}
